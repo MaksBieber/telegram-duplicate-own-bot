@@ -386,13 +386,13 @@ async def media(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # ==============================
     if h in hash_cache:
 
-    user = update.effective_user.id
-    name = update.effective_user.full_name
+       user = update.effective_user.id
+       name = update.effective_user.full_name
 
-    # delete duplicate media
-    await message.delete()
+      # delete duplicate media
+       await message.delete()
 
-    dupmsg = await context.bot.send_message(
+       dupmsg = await context.bot.send_message(
         chat,
         f"⚠️ [{name}](tg://user?id={user}) duplicate media removed",
         parse_mode="Markdown"
@@ -578,5 +578,6 @@ print("Guard Bot Running...")
 
 
 app.run_polling()
+
 
 
