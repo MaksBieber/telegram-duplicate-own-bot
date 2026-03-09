@@ -3,13 +3,7 @@
 # ==============================
 
 import asyncio
-#from email import message
-from email import message
-from multiprocessing import context
 import sqlite3
-
-from turtle import update
-#from turtle import update
 
 from telegram import Update
 from telegram.ext import (
@@ -392,8 +386,8 @@ async def media(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # ==============================
     if h in hash_cache:
 
-        user = update.effective_user.id
-        name = update.effective_user.first_name
+    user = update.effective_user.id
+    name = update.effective_user.full_name
 
     # delete duplicate media
     await message.delete()
@@ -584,3 +578,4 @@ print("Guard Bot Running...")
 
 
 app.run_polling()
+
